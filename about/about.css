@@ -1,4 +1,4 @@
-            html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+           html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
                 margin: 0;
                 padding: 0;
                 border: 0;
@@ -403,6 +403,151 @@
                 margin-top: 1rem;
             }
 
+            .timer {
+                cursor: default;
+                line-height: 1;
+            }
+
+            .timer ul {
+                display: inline-flex;
+                flex-direction: row;
+                list-style: none;
+                max-width: 100%;
+            }
+
+            .timer ul li {
+                position: relative;
+                z-index: 1;
+            }
+
+            .timer ul li.delimiter {
+                flex: 0 1 auto;
+            }
+
+            .timer ul li.delimiter .symbol {
+                display: block;
+                left: 0;
+                position: absolute;
+                text-align: center;
+                top: 0;
+                width: 100%;
+            }
+
+            .timer ul li.number {
+                flex: 1;
+                min-width: 2rem;
+            }
+
+            .timer ul li.number .item {
+                position: relative;
+            }
+
+            .timer ul li.number .item .digit {
+                display: block;
+                position: relative;
+                white-space: nowrap;
+            }
+
+            .timer ul li.number .item .digit .component {
+                display: inline-block;
+                width: 50%;
+            }
+
+            .timer ul li.number .item .digit.count2 .component {
+                width: 50%;
+            }
+
+            .timer ul li.number .item .digit.count3 .component {
+                width: 33.3333%;
+            }
+
+            .timer ul li.number .item .digit.count4 .component {
+                width: 25%;
+            }
+
+            .timer ul li.number .item .digit.count5 .component {
+                width: 20%;
+            }
+
+            .timer ul li.number .item .label {
+                display: block;
+                white-space: nowrap;
+            }
+
+            .timer ul li.number .item .label > * {
+                display: inline-block;
+            }
+
+            .timer ul li.number .item .label .full {
+                width: 5em;
+            }
+
+            .timer ul li.number .item .label .abbreviated {
+                width: 3em;
+            }
+
+            .timer ul li.number .item .label .initialed {
+                width: 1em;
+            }
+
+            #timer01 {
+                text-align: center;
+            }
+
+            #timer01 ul {
+                width: 15rem;
+            }
+
+            #timer01:not(:first-child) {
+                margin-top: 0.625rem !important;
+            }
+
+            #timer01:not(:last-child) {
+                margin-bottom: 0.625rem !important;
+            }
+
+            #timer01 ul li.delimiter {
+                width: 2rem;
+                min-width: 1rem;
+            }
+
+            #timer01 ul li.delimiter .symbol {
+                color: #BFBFBF;
+            }
+
+            #timer01 ul li.number .item .digit {
+                font-family: 'Aboreto', cursive;
+                font-weight: 400;
+                color: #000000;
+                line-height: 1em;
+                text-align: inherit;
+            }
+
+            #timer01 ul li.number .item .label > * {
+                margin-top: calc(0.5rem + 0.25em);
+                letter-spacing: 0.35rem;
+            }
+
+            #timer01 ul li.number .item .label {
+                font-family: 'Aboreto', cursive;
+                font-size: 1rem;
+                font-weight: 400;
+                width: calc(100% + 0.35rem);
+                color: #000000;
+            }
+
+            #timer01 ul li.number .item .label .full {
+                width: calc(5em + 2.1rem);
+            }
+
+            #timer01 ul li.number .item .label .abbreviated {
+                width: calc(3em + 1.4rem);
+            }
+
+            #timer01 ul li.number .item .label .initialed {
+                width: calc(2em + 1.05rem);
+            }
+
             .buttons {
                 cursor: default;
                 display: flex;
@@ -663,6 +808,14 @@
                     line-height: 1.375;
                 }
 
+                #timer01:not(:first-child) {
+                    margin-top: 1.25rem !important;
+                }
+
+                #timer01:not(:last-child) {
+                    margin-bottom: 1.25rem !important;
+                }
+
                 #buttons01 {
                     gap: 0.25rem;
                 }
@@ -693,6 +846,14 @@
 
                 #main > .inner {
                     --spacing: 0.875rem;
+                }
+
+                #timer01 ul li.delimiter {
+                    width: 1.25rem;
+                }
+
+                #timer01 ul li.number .item .label > * {
+                    margin-top: calc(0.5rem + 0.25em);
                 }
             }
 
